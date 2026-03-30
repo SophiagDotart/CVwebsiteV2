@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <title>CV Website</title>
+        <link rel="stylesheet" href="./style.css">
+        <script src="interactions.js" defer></script>
+        <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <header class="topMenu">
+            <div id="langSwitch">
+                <button data-lang="en">EN</button>
+                <button data-lang="de">DE</button>
+                <button data-lang="es">ES</button>
+            </div>
+            <button id="menuToggle">☰</button> 
+            <ul class="dropdownMenu hidden">
+                <li><a href="subpages/about.html" data-page="about">About</a></li>
+                <li><a href="subpages/projects.html" data-page="projects">Projects</a></li>
+                <li><a href="subpages/references.html" data-page="network">Network</a></li>
+                <li><a href="subpages/publicStuff.html" data-page="publicStuff">Public Appearances</a></li>
+                <li><a href="subpages/contact.html" data-page="contact">Contact</a></li>
+            </ul>
+        </header>
+
+        <main></main>
+
+        <footer class="bottomMenu">
+            <nav class="bottomNav">
+                <a href="subpages/about.html" data-page="about">About</a>
+                <a href="subpages/projects.html" data-page="projects">Projects</a>
+                <a href="subpages/references.html" data-page="network">Network</a>
+                <a href="subpages/publicStuff.html"data-page="publicStuff">Public Appearances</a>
+                <a href="subpages/contact.html" data-page="contact">Contact</a>
+            </nav>
+        </footer>
+
+        <div id="overlay" class="overlay hidden">
+            <div class="overlayContent">
+                <button id="closeOverlay">✖</button>
+                <div id="overlayText"></div>
+            </div>
+        </div>
+    </body>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<head>
+    <title>CV Website</title>
+    <link rel="style" href="./style.css">
+</head>
+<body>
+    <div class="section"></div>
+    <!--Maybe add filter? Categories: current, uni, scholarship, school, volunteering, praktikum, fortbildum, minijobs, ocean, cultural, other-->
+        <h2>Network</h2>
+
+        <p class="summary">
+            A selection of organizations I've worked with across engineering, education, and international collaboration.
+        </p>
+
+        <div class="networkFilter">
+
+            <!--Status-->
+            <div class="filterGroup" data-group="status">
+                <button class="filterMain">Status</button>
+                <div class="filterDropdown">
+                    <button data-filter="all">All</button>
+                    <button data-filter="current">Current</button>
+                    <button data-filter="former">Former</button>
+                </div>
+            </div>
+            <!--Type-->
+            <div class="filterGroup" data-group="type">
+                <button class="filterMain">Type</button>
+                <div class="filterDropdown">
+                    <button data-filter="all">All</button>
+                    <button data-filter="uni">University</button>
+                    <button data-filter="work">Work</button>
+                    <button data-filter="vol">Volunteering</button>
+                    <button data-filter="scholarship">Scholarship</button>
+                    <button data-filter="internship">Internship</button>
+                    <button data-filter="education">Further Education</button>
+                </div>
+            </div>
+            <!--Topic-->
+            <div class="filterGroup" data-group="topic">
+                <button class="filterMain">Topic</button>
+                <div class="filterDropdown">
+                    <button data-filter="all">All</button>
+                    <button data-filter="cultural">Culture and Society</button>
+                    <button data-filter="ocean">Ocean Preservation</button>
+                    <button data-filter="engineering">Engineering</button>
+                    <button data-filter="startup">Entrepreneurship</button>
+                </div>
+    </div>
+        </div>
+
+        <div class="miniGrid">
+
+            <div class="card">
+                <h2>Europe</h2>
+                <ul class="cardDetails">
+                    <li data-status="former" data-type="vol" data-topic="engineering">
+                        <a href="https://cybermentor.de/">CyberMentor</a></li>
+                    <li data-status="current" data-type="vol" data-topic="ocean">
+                        <a href="https://www.surfrider.eu/">Surfriders Europe</a></li>
+                    <li data-status="former" data-type="work, vol" data-topic="engineering">
+                        <a href="https://www.tu-ilmenau.de/universitaet/quicklinks/zentralinstitut-fuer-bildung/angebote/unikat">UNIKAT</a></li>
+                    <!--<li data-status="current" data-type="vol" data-topic="cultural">
+                        <a href="https://www.bateria-altona.de/">Batería Altona</a></li>-->
+                    <li data-status="former" data-type="education" data-topic="startup, engineering">
+                        <a href="https://www.tu-ilmenau.de/forschung/service/ilmkubator-gruenderservice">Ilmkubator</a></li>
+                    <li data-status="former" data-type="education, uni" data-topic="engineering">
+                        <a href="https://www.tu-ilmenau.de/universitaet/quicklinks/zentralinstitut-fuer-bildung/bildung/practicing-by-basic">PracticING</a></li>
+                    <li data-status="former" data-type="scholarship, education" data-topic="cultural, startup">
+                        <a href="https://www.deutschlandstiftung.net/projekte/geh-deinen-weg-programm">Geh Deinen Weg (GDW)</a></li>
+                    <li data-status="former" data-type="scholarship" data-topic="engineering">
+                        <a href="https://www.schulergroup.com/unternehmen/gesellschaftliches_engagement/louis_schuler_fonds/index.html">Louis Schuler Fond</a></li>
+                    <li data-status="former" data-type="uni" data-topic="engineering, startup">
+                        <a href="https://www.tum.de/">Technische Universität München (TUM)</a></li>
+                    <li data-status="current" data-type="uni" data-topic="engineering">
+                        <a href="https://www.tu-ilmenau.de/">Technische Universität Ilmenau (TU ILmenau)</a></li>
+                    <li data-status="current" data-type="uni" data-topic="engineering">
+                        <a href="https://www.tu-darmstadt.de/">Technische Universität Darmstadt (TU Darmstadt)</a></li>
+                    <li data-status="former" data-type="vol" data-topic="cultural">
+                        <a href="https://iswi.org/">ISWI e.V.</a></li>
+                    <li data-status="former" data-type="vol" data-topic="cultural">
+                        <a href="https://www.tu-ilmenau.de/international/campus-international/we4you">We4you</a></li>
+                    <li data-status="former" data-type="scholarship" data-topic="engineering, cultural">
+                        <a href="https://www.thueko.de/">Thüringer Koordinierungsstelle Naturwissenschaft & Technik (Thueko)</a></li>
+                    <li data-status="current" data-type="vol" data-topic="cultural">
+                        <a href="https://www.dokomi.de/de">Dokomi</a></li>
+                    <li data-status="current" data-type="scholarship" data-topic="engineering">
+                        <a href="https://www.tu-ilmenau.de/universitaet/quicklinks/universitaetsgesellschaft">Universitätsgesellschaft Ilmenau</a></li>
+                    <!--<li>Milano school: former school</li>
+                    <li>WHG: former school</li> -->
+                    <li data-status="former" data-type="education" data-topic="cultural, startup">
+                        <a href="https://distanz.info/en/">DISTANZ e.V.</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>North and Latin America</h2>
+                <ul class="cardDetails">
+                    <li data-status="former" data-type="uni, education" data-topic="engineering">
+                        <a href="https://fabacademy.org/">FAB ACADEMY</a></li>
+                    <li data-status="former" data-type="uni, internship" data-topic="engineering">
+                        <a href="https://www.ulima.edu.pe/">Universidad de Lima (ULima)</a>
+                    <!-- <li>Colegio Alexander von Humbold Lima: former school</li> -->
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Australia</h2>
+                <ul class="cardDetails">
+                    <li data-status="former" data-type="uni, education" data-topic="engineering, cultural">
+                        <a href="https://www.griffith.edu.au/">Griffith University</a></li>
+                    <li data-status="former" data-type="vol" data-topic="ocean">
+                        <a href="https://www.griffithmarinesociety.com/">Griffith Marine Society</a></li>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</body>
