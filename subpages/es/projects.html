@@ -1,42 +1,188 @@
+<!DOCTYPE html>
 <head>
-<!--ES-->
-    <link rel="stylesheet" href="../../style.css"
-    <script src="../../interactions.js" defer></script>
+    <title>CV Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div class="section">
-        <h2>Proyectos Grandes</h2>
+        <h2>Proyectos grandes</h2>
 
         <div class="cardGrid">
+            <!-- Card setup:
+                Title
+                Short summary -> what is it
+                Bullet points -> why it is cool 
+                Links -> here is my proof-->
             <div class="card featured">
-                <h3>Puzzling Robots</h3>
+                <h3>Puzzling robots</h3>
                 <div class="summary">
-                    Robots autónomos en enjambre que se localizan y cooperan sin control central.
+                    Un sistema modular de robótica de enjambre diseñado para mejorar las habilidades cognitivas 
+                    y motoras mediante juegos interactivos.
                 </div>
                 <ul class="cardDetails">
-                    <li>Lógica de navegación autónoma desarrollada</li>
-                    <li>Integración de hardware y software</li>
+                    <li>Desarrollo de un protocolo de comunicación para la coordinación descentralizada del enjambre</li>
+                    <li>Diseños e implementación de componentes de hardware y software</li>
+                    <li>Estado actual: Integrando hardware con el software y redactando la documentación</li>
                 </ul>
-                <span class="status">Estado: En desarrollo</span>
+                <span class="status">Estado: En desarrollo desde 2025</span>
+                <div class="cardLinks">
+                    <a href="https://github.com/SophiagDotart/puzzlingRobots">Github</a> | 
+                    <a href="https://fabacademy.org/2025/labs/ilmenau/students/sophia-guzman/puzzRobots.html">Página de desarollo</a> |
+                    <a>Documentación (descarga available cuando esté lista)</a> 
+                </div>
             </div>
 
             <div class="card">
                 <h3>TukTukTranslator</h3>
                 <div class="summary">
-                    Sistema de traducción en tiempo real para entornos con pocos recursos.
+                    Un dispositivo de traducción independiente de la red, 
+                    diseñado para entornos de servicio para estudiantes internacionales.</div>
+                <div class="cardDetails">
+                    <li>Reconocimiento de palabras e idiomas con IA</li>
+                    <li>Reproducción de palabras en diferentes idiomas</li>
+                    <li>Estado actual: Recopilando datos y entrenando la IA</li>
                 </div>
-                <span class="status">Estado: En desarrollo</span>
+                <span class="status">Estado: En desarrollo desde 2026</span>
+                <div class="cardLinks">
+                    <a>Los Detalles aún no han sido publicados</a>
+                </div>
+            </div>    
+
+            <div class="card">
+                <h3>The Turtle Bar</h3>
+                <div class="summary">
+                    Mi propio bar móvil con cócteles, mocktéles y menús personalizados para eventos especiales.
+                </div>
+                <div class="cardDetails">
+                    <li>Creación de bebidas, menús y decoración según los deseos del cliente</li>
+                    <li>Gestión de la marca, atención al cliente, finanzas y logística</li>
+                </div>
+                <span class="status">Estado: Cerrado. Me mudé</span>
             </div>
+
+            <div class="card">
+                <h3>State of the Art Swarm Robotics</h3>
+                <div class="summary">
+                    Una revisión exhaustiva del panorama de la robótica de enjambre en 2024.
+                </div>
+                <ul class="cardDetails"> 
+                    <li>En nombre de Schulze, P-R of Fachgebiet Neuroinformatik und Kognitive Robotik TU Ilmenau</li>
+                    <li>Si el PDF aparece en gris, utilice otro visor de PDF. Disculpe las molestias.</li>
+                </ul>
+                <span class="status">Estado: Completado en 2024</span>
+                <div class="cardLinks">
+                    <a href="./files/2024_Swarm_robotics__a_state_of_the_art_review_Hauptseminar_Sophia_Guzman_Artmann.pdf" download>Descarga SOTA</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Swarm Bugs</h3>
+                <div class="summary">
+                    Un enjambre robótico y simulación para la reconstrucción de imágenes tridimensionales.
+                </div>
+                <div class="cardDetails">
+                    <li>Liderar un equipo de más de 10 colaboradores y coordinación con las partes interesadas externas</li></li>
+                    <li>Gestionar el alcance, los plazos y la dinámica del equipo bajo presión</li></li>
+                    <li>Conclusión clave: los equipos sólidos y los alcances de proyecto 
+                        realistas importan más que las ideas perfectas</li>
+                </div>
+                <span class="status">Estado: Cancelado en 2024</span>
+                <div class="cardLinks">
+                    <a href="https://github.com/SophiagDotart/swarmBugs/tree/main?tab=readme-ov-file">Github</a> 
+                </div>
+            </div>
+
         </div>
 
-        <h2>Proyectos Pequeños</h2>
 
+        <h2>Otros proyectos</h2>
         <div class="cardGrid">
+
             <div class="card">
+                <h3>Ésta página web</h3>
                 <div class="summary">
-                    Este sitio web – segunda versión con mejor UX.
+                    Segunda versión!
+                </div>
+                <span class="status">Estatus: Siempre mejorándola!</span>
+                <div class="cardLinks">
+                    <a href="https://github.com/SophiagDotart/CVwebsiteV2">Github</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Impresión en 3D</h3>
+                <div class="summary">
+                    Prototipado de proyectos, electrodomésticos, escaneos 3D y, de vez en cuando, decoraciónes.
+                </div>
+                <span class="status">Nivel de competencia: Intermedio</span>
+                <div class="cardLinks">
+                        <!--<a href="">Small gallery</a> |-->
+                        <a href="https://fabacademy.org/2025/labs/ilmenau/students/sophia-guzman/assignments/W11/w11.html">Ejemplo: tornillo imprimible en 3D</a> |
+                        <a href="https://fabacademy.org/2025/labs/ilmenau/students/sophia-guzman/assignments/W13/w13.html">Docu: escaneos 3D</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Corte láser</h3>
+                <div class="summary">
+                    Artículos de decoración personalizados y de marketing para UNIKAT e Ilmkubator.
+                </div>
+                <span class="status">Nivel de competencia: Intermedio</span>
+                <div class="cardLinks">
+                        <!--<a href="">Small gallery</a> |-->
+                        <a href="https://fabacademy.org/2025/labs/ilmenau/students/sophia-guzman/assignments/W3/w3.html">Ejemplos: corte láser</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Electrónica</h3>
+                <div class="summary">
+                    Solo para prototipado. Impartí talleres de soldadura en nombre de PracticING y UNIKAT. 
+                    Además, conocimientos básicos sobre la producción de placas de circuitos y 
+                    cables para electrodomésticos y robótica.
+                </div>
+                <span class="status">Nivel de competencia: Intermedio</span>
+                <div class="cardLinks">
+                    <!--<a href="">Example Project</a> |-->
+                    <a href="https://fabacademy.org/2025/labs/ilmenau/students/sophia-guzman/assignments/W8/w8.html">Producción de placas de circuitos</a> |
+                    <a href="https://www.tu-ilmenau.de/universitaet/quicklinks/zentralinstitut-fuer-bildung/angebote/unikat/workshops">Workshops de UNIKAT </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Costura</h3>
+                <div class="summary">
+                    Principalmente reparaciones y algunas prendas de vestir.
+                </div>
+                <span class="status">Nivel de competencia: Principiante</span>
+                <div class="cardLinks">
+                    <a href="https://fabacademy.org/2025/labs/ilmenau/students/sophia-guzman/sonstigeProjects/sewing/acupressureNackenkissen.html">Ejemplo: Almohada de cuello de acupuntura </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Moldeo y fundición</h3>
+                <div class="summary">
+                    Solo para uso personal.
+                </div>
+                <span class="status">Nivel de competencia: Principiante</span>
+                <div class="cardLinks">
+                    <a href="https://fabacademy.org/2025/labs/ilmenau/students/sophia-guzman/assignments/W13/w13.html">Documentación inicial</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Trabajos de madera</h3>
+                <div class="summary">
+                    Principalmente muebles para mi casa. Impartí talleres de carpintería básica para UNIKAT.
+                </div>
+                <span class="status">Nivel de competencia: Principiante</span>
+                <div class="cardLinks">
+                    <a href="https://fablab.tu-ilmenau.de/#!/projects/unikat-airhockey-tisch">mesa de airpong para UNIKAT</a>
                 </div>
             </div>
         </div>
     </div>
+    
 </body>

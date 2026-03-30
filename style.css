@@ -127,7 +127,7 @@ h2 {
 
 .miniGrid {
     display: grid;
-    grid-template-columns: minmax(180px, 1fr) minmax(180px, 1fr) minmax(180px, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: var(--margin-base);
 }
 
@@ -474,6 +474,9 @@ body.overlay-open .bottomNav a.active::after {
         max-height: calc(100vh - 64px);
         padding: 16px;
         border-radius: 12px;
+    }
+    .miniGrid {
+        grid-template-columns: 1fr;
     }
 }
 
