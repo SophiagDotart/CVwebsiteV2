@@ -137,6 +137,15 @@ h2 {
     font-weight: 600;
 }
 
+.card ol {
+    padding-left: 20px;
+    margin-top: 8px;
+}
+
+.card li {
+    margin-bottom: 6px;
+}
+
 .status {
     font-size: var(--text-sm);
     color: rgba(0, 60, 80, 0.6);
