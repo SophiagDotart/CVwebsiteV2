@@ -12,6 +12,44 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // =========================
+  // MENU TRANSLATIONS
+  // =========================
+  const menuTranslations = {
+    en: {
+      about: "About & Contact",
+      projects: "Projects",
+      network: "Network",
+      publicStuff: "Public Appearances"
+    },
+    de: {
+      about: "Über mich & Kontakt",
+      projects: "Projekte",
+      network: "Netzwerk",
+      publicStuff: "Öffentliche Auftritte"
+    },
+    es: {
+      about: "Sobre mí & Contacto",
+      projects: "Proyectos",
+      network: "Red",
+      publicStuff: "Apariciones públicas"
+    }
+  };
+
+  function updateMenuLanguage() {
+    const allMenuLinks = document.querySelectorAll("a[data-page]");
+
+    allMenuLinks.forEach(link => {
+      const page = link.dataset.page;
+      if (menuTranslations[currentLang][page]) {
+        link.textContent = menuTranslations[currentLang][page];
+      }
+    });
+  }
+
+  // run once on load
+  updateMenuLanguage();
+
+  // =========================
   // DROPDOWN MENU
   // =========================
   const toggle = document.getElementById("menuToggle");
@@ -26,6 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // =========================
   const langButtons = document.querySelectorAll("#langSwitch button");
 
+  const overlay = document.getElementById("overlay");
+
   langButtons.forEach(btn => {
     if (btn.dataset.lang === currentLang) {
       btn.classList.add("active");
@@ -38,6 +78,10 @@ document.addEventListener("DOMContentLoaded", () => {
       langButtons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
 
+      // 🔥 update menu text
+      updateMenuLanguage();
+
+      // reload overlay if open
       if (overlay.classList.contains("active")) {
         const activeLink = document.querySelector(".bottomNav a.active");
         if (activeLink) {
@@ -51,7 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // =========================
   // OVERLAY SYSTEM
   // =========================
-  const overlay = document.getElementById("overlay");
   const overlayContent = document.querySelector(".overlayContent");
   const overlayText = document.getElementById("overlayText");
   const closeBtn = document.getElementById("closeOverlay");
@@ -80,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
         overlayText.innerHTML = html;
         overlayContent.classList.remove("fade-out");
 
-        initFilters(); // 🔥 re-init filters after load
+        initFilters();
 
       }, 200);
 
@@ -134,7 +177,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const buttons = group.querySelectorAll("[data-filter]");
       const groupName = group.dataset.group;
 
-      // toggle dropdown
       mainBtn.addEventListener("click", () => {
         group.classList.toggle("active");
       });
@@ -143,15 +185,11 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.addEventListener("click", () => {
 
           const value = btn.dataset.filter;
-
-          // update state
           activeFilters[groupName] = value;
 
-          // update button UI
           buttons.forEach(b => b.classList.remove("active"));
           btn.classList.add("active");
 
-          // highlight main button if not "all"
           if (value !== "all") {
             group.classList.add("has-active");
           } else {
@@ -168,7 +206,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     items.forEach(item => {
 
-      // split multi-tags into arrays
       const statusList = (item.dataset.status || "former").split(",");
       const typeList = (item.dataset.type || "").split(",");
       const topicList = (item.dataset.topic || "").split(",");
