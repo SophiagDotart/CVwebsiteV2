@@ -35,16 +35,66 @@
 }
 
 body {
-    /**/
-    background-image: url(imgs/StockCake-Underwater_Coral_Paradise-1256976-medium.jpg);
+    background: none;
+    /*really nice colors: 
+        radial-gradient(circle at 80% 70%, rgba(80, 200, 160, 0.4), transparent 40%),
+    */
 }
 
 body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(0, 60, 80, 0.3);
-    z-index: -1;
+    z-index: -2;
+
+    background:
+        /* OCEAN BACKGROUND */
+        radial-gradient(circle at 75% 75%, rgba(55, 108, 90, 0.25), transparent 40%),
+        radial-gradient(circle at 75% 75%, rgba(60, 180, 140, 0.25), transparent 40%),
+        radial-gradient(circle at 90% 20%, rgba(122, 225, 184, 0.15), transparent 35%),
+        radial-gradient(circle at 80% 70%, rgba(64, 163, 130, 0.4), transparent 40%),
+        linear-gradient(to bottom, #0a5a6b, #026b85);
+        
+    background-size: 200% 200%;
+    animation: bgMove 20s ease infinite;
+    filter: blur(12px);
+    mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0.4));
+    mix-blend-mode: normal;
+}
+
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body::after {
+    content: "";
+  top: 20%;          /* starting vertical position */
+  left: 10%;         /* starting horizontal position */
+  width: 60%;        /* width of coral area */
+  height: 50%;       /* height of coral area */
+  z-index: -1;
+
+  /* Coral clusters */
+  background-image:
+    radial-gradient(circle, rgba(255,120,80,0.6) 20%, transparent 0),
+    radial-gradient(circle, rgba(255,100,90,0.5) 15%, transparent 0),
+    radial-gradient(circle, rgba(255,150,100,0.55) 18%, transparent 0),
+    radial-gradient(circle, rgba(255,200,80,0.4) 12%, transparent 0),
+    radial-gradient(circle, rgba(255,180,90,0.45) 15%, transparent 0),
+    radial-gradient(circle, rgba(255,140,120,0.5) 10%, transparent 0);
+
+  /* Cluster tile size: smaller for dense areas, larger for sparse */
+  background-size: 60px 60px, 80px 80px, 100px 100px, 50px 50px, 70px 70px, 40px 40px;
+
+  /* Stagger positions inside each cluster */
+  background-position:
+    0 0, 20px 25px, 50px 10px, 10px 40px, 35px 55px, 15px 20px;
+
+  /* Repeat the clusters */
+  background-repeat: repeat;
+    filter: blur(3px);
 }
 
 /* Layout */
@@ -85,7 +135,8 @@ h2 {
     margin: 0 auto;
 
     background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(8px);
+    /*backdrop-filter: blur(8px);*/
+    
 
     display: flex;
     flex-direction: column;
@@ -171,7 +222,7 @@ h2 {
 }
 
 .featured {
-    background: rgba(240, 248, 255, 0.4);
+    background: rgba(240, 248, 255, 0.3);
     border: 2px solid var(--color-accent);
 }
 
@@ -525,7 +576,7 @@ body.overlay-open .bottomNav a.active::after {
         border-radius: 12px;
     }
     .miniGrid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1 fr;
     }
 }
 
