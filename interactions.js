@@ -206,15 +206,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     items.forEach(item => {
 
-      const statusList = (item.dataset.status || "former").split(",");
-      const typeList = (item.dataset.type || "").split(",");
-      const topicList = (item.dataset.topic || "").split(",");
+      const normalize = str => str.trim().toLowerCase();
 
-      const match =
-        (activeFilters.status === "all" || statusList.includes(activeFilters.status)) &&
-        (activeFilters.type === "all" || typeList.includes(activeFilters.type)) &&
-        (activeFilters.topic === "all" || topicList.includes(activeFilters.topic));
+    const statusList = (item.dataset.status || "former")
+      .split(",")
+      .map(normalize);
 
+    const typeList = (item.dataset.type || "")
+      .split(",")
+      .map(normalize);
+
+    const topicList = (item.dataset.topic || "")
+      .split(",")
+      .map(normalize);
+
+    const match =
+      (activeFilters.status === "all" || statusList.includes(normalize(activeFilters.status))) &&
+      (activeFilters.type === "all" || typeList.includes(normalize(activeFilters.type))) &&
+      (activeFilters.topic === "all" || topicList.includes(normalize(activeFilters.topic)));
       item.classList.toggle("hidden", !match);
     });
   }

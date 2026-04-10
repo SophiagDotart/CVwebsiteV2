@@ -69,32 +69,28 @@ body::before {
 }
 
 body::after {
-    content: "";
-  top: 20%;          /* starting vertical position */
-  left: 10%;         /* starting horizontal position */
-  width: 60%;        /* width of coral area */
-  height: 50%;       /* height of coral area */
-  z-index: -1;
+    /*content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
 
-  /* Coral clusters */
-  background-image:
-    radial-gradient(circle, rgba(255,120,80,0.6) 20%, transparent 0),
-    radial-gradient(circle, rgba(255,100,90,0.5) 15%, transparent 0),
-    radial-gradient(circle, rgba(255,150,100,0.55) 18%, transparent 0),
-    radial-gradient(circle, rgba(255,200,80,0.4) 12%, transparent 0),
-    radial-gradient(circle, rgba(255,180,90,0.45) 15%, transparent 0),
-    radial-gradient(circle, rgba(255,140,120,0.5) 10%, transparent 0);
+    /* Coral clusters 
+    background-image:
+        radial-gradient(circle, rgba(255,120,80,0.6) 20%, transparent 0),
+        radial-gradient(circle, rgba(255,100,90,0.5) 15%, transparent 0),
+        radial-gradient(circle, rgba(255,150,100,0.55) 18%, transparent 0),
+        radial-gradient(circle, rgba(255,200,80,0.4) 15%, transparent 0),
+        radial-gradient(circle, rgba(255,180,90,0.45) 18%, transparent 0);
+*/
+    /* Define size of cluster tile 
+    background-size: 120px 120px;*/
 
-  /* Cluster tile size: smaller for dense areas, larger for sparse */
-  background-size: 60px 60px, 80px 80px, 100px 100px, 50px 50px, 70px 70px, 40px 40px;
+    /* Stagger positions of dots inside each tile 
+    background-position: 0 0, 30px 40px, 60px 20px, 80px 60px, 50px 90px;*/
 
-  /* Stagger positions inside each cluster */
-  background-position:
-    0 0, 20px 25px, 50px 10px, 10px 40px, 35px 55px, 15px 20px;
-
-  /* Repeat the clusters */
-  background-repeat: repeat;
-    filter: blur(3px);
+    /* Repeat the clusters across screen 
+    background-repeat: repeat;
+    filter: blur(3px);*/
 }
 
 /* Layout */
