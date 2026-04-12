@@ -179,7 +179,7 @@ h2 {
 
 .miniGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
     gap: var(--margin-base);
 }
 
@@ -323,13 +323,13 @@ h2 {
     position: fixed;
     top: 16px;   
     right: 16px; 
-    z-index: 20;
+    z-index: 60;
 
     display: grid;
     grid-template-columns: auto auto ;
     gap: var(--margin-base);
 
-    height: 10vh;
+    height: var(--menu-height);
     min-height: 30px;
 }
 
@@ -562,17 +562,66 @@ body.overlay-open .bottomNav a.active::after {
     .scene {
         display: none;
     }
-    .bottomMenu{
-        display: none;
+    .bottomMenu {
+        position: fixed;
+        top: var(--menu-height); /* start below top menu */
+        bottom: 0;
+        height: calc(100vh - var(--menu-height));
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.3s ease;
+
+        flex-direction: column; /* important */
     }
+
+    .bottomNav {
+        flex-direction: column; /* stack items vertically */
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .bottomNav a {
+        font-size: 24px; /* readable size */
+    }
+
+    body.overlay-open .bottomMenu {
+    transform: translateY(100%);
+    }
+
     .overlayContent {
         width: 92%;
         max-height: calc(100vh - 64px);
         padding: 16px;
         border-radius: 12px;
+        align-items: stretch;
     }
+
     .miniGrid {
-        grid-template-columns: 1 fr;
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .card {
+        padding: 12px;
+    }
+
+    .cardDetails {
+        font-size: 14px; /* slightly larger for readability */
+        line-height: 1.4;
+    }
+
+    .card h2 {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    }
+
+    .summary {
+        font-size: 15px;
+        line-height: 1.5;
     }
 }
 

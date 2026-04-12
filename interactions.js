@@ -46,24 +46,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // run once on load
   updateMenuLanguage();
 
   // =========================
-  // DROPDOWN MENU
+  // DROPDOWN MENU (TOP)
   // =========================
   const toggle = document.getElementById("menuToggle");
   const dropdown = document.querySelector(".dropdownMenu");
 
-  toggle.addEventListener("click", () => {
+  toggle.addEventListener("click", (e) => {
+    e.stopPropagation();
     dropdown.classList.toggle("active");
+  });
+
+  // Close when clicking a menu link
+  document.querySelectorAll(".dropdownMenu a").forEach(link => {
+    link.addEventListener("click", () => {
+      dropdown.classList.remove("active");
+    });
   });
 
   // =========================
   // LANGUAGE SWITCH
   // =========================
   const langButtons = document.querySelectorAll("#langSwitch button");
-
   const overlay = document.getElementById("overlay");
 
   langButtons.forEach(btn => {
@@ -78,10 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
       langButtons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
 
-      // 🔥 update menu text
       updateMenuLanguage();
 
-      // reload overlay if open
       if (overlay.classList.contains("active")) {
         const activeLink = document.querySelector(".bottomNav a.active");
         if (activeLink) {
@@ -160,6 +164,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!overlay.classList.contains("active")) {
         openOverlay();
       }
+
+      // 🔥 close top dropdown after navigation
+      dropdown.classList.remove("active");
     });
   });
 
@@ -177,7 +184,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const buttons = group.querySelectorAll("[data-filter]");
       const groupName = group.dataset.group;
 
-      mainBtn.addEventListener("click", () => {
+      // 🔥 only one dropdown open
+      mainBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        groups.forEach(g => g.classList.remove("active"));
         group.classList.toggle("active");
       });
 
@@ -197,8 +207,18 @@ document.addEventListener("DOMContentLoaded", () => {
           }
 
           applyFilters(items);
+
+          // 🔥 close after selection
+          group.classList.remove("active");
         });
       });
+    });
+
+    // 🔥 close filters when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".filterGroup")) {
+        groups.forEach(g => g.classList.remove("active"));
+      }
     });
   }
 
@@ -208,28 +228,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const normalize = str => str.trim().toLowerCase();
 
-    const statusList = (item.dataset.status || "former")
-      .split(",")
-      .map(normalize);
+      const statusList = (item.dataset.status || "former")
+        .split(",")
+        .map(normalize);
 
-    const typeList = (item.dataset.type || "")
-      .split(",")
-      .map(normalize);
+      const typeList = (item.dataset.type || "")
+        .split(",")
+        .map(normalize);
 
-    const topicList = (item.dataset.topic || "")
-      .split(",")
-      .map(normalize);
+      const topicList = (item.dataset.topic || "")
+        .split(",")
+        .map(normalize);
 
-    const match =
-      (activeFilters.status === "all" || statusList.includes(normalize(activeFilters.status))) &&
-      (activeFilters.type === "all" || typeList.includes(normalize(activeFilters.type))) &&
-      (activeFilters.topic === "all" || topicList.includes(normalize(activeFilters.topic)));
+      const match =
+        (activeFilters.status === "all" || statusList.includes(normalize(activeFilters.status))) &&
+        (activeFilters.type === "all" || typeList.includes(normalize(activeFilters.type))) &&
+        (activeFilters.topic === "all" || topicList.includes(normalize(activeFilters.topic)));
+
       item.classList.toggle("hidden", !match);
     });
   }
 
   // =========================
-  // CLOSE
+  // GLOBAL OUTSIDE CLICK
+  // =========================
+  document.addEventListener("click", (e) => {
+
+    // close top dropdown
+    if (!e.target.closest("#menuToggle") && !e.target.closest(".dropdownMenu")) {
+      dropdown.classList.remove("active");
+    }
+  });
+
+  // =========================
+  // CLOSE OVERLAY
   // =========================
   closeBtn.addEventListener("click", closeOverlay);
 
